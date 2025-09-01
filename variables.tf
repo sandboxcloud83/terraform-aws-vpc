@@ -37,3 +37,21 @@ variable "enable_nat_gateway" {
   type        = bool
   default     = true
 }
+
+variable "map_public_ip_on_launch" {
+  description = "Set to true to assign a public IP address to instances launched in public subnets."
+  type        = bool
+  default     = true
+}
+
+variable "enable_flow_logs" {
+  description = "Set to true to enable VPC Flow Logs to be sent to CloudWatch."
+  type        = bool
+  default     = false
+}
+
+variable "flow_logs_kms_key_arn" {
+  description = "Optional KMS Key ARN to encrypt the CloudWatch Log Group for VPC Flow Logs."
+  type        = string
+  default     = null
+}
